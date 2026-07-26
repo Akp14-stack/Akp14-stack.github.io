@@ -1,0 +1,382 @@
+---
+---
+
+<section id="home" class="hero section">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        <span>Available for Internships & Full-time Roles</span>
+      </div>
+
+      <h1 class="hero-title">
+        Hi, I'm <span class="text-gradient">Ayan Kumar</span><br />
+        Pathak.
+      </h1>
+
+      <div class="role-wrapper code-font">
+        <span class="role-prefix">&gt;</span>
+        <span class="role-text" id="typewriter">Full Stack Developer</span>
+        <span class="cursor">|</span>
+      </div>
+
+      <p class="hero-desc">
+        Spearheading scalable enterprise web applications using <strong class="text-primary">ASP.NET Core</strong> and <strong class="text-primary">React.js</strong>. Passionate about architecting robust RESTful APIs, role-based access control (RBAC), and ultra-responsive frontend designs.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          Explore My Work
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          Get in Touch
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+        <a href="/cv.pdf" download="Ayan_Kumar_Pathak_CV.pdf" class="btn btn-secondary cv-btn" id="download-cv" title="Download Curriculum Vitae">
+          Download CV
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">Full Stack</span>
+          <span class="stat-label">ASP.NET & React</span>
+        </div>
+
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">BCA '27</span>
+          <span class="stat-label">Expected Grad</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Glowing Tech Avatar / Interactive Illustration -->
+    <div class="hero-visual">
+      <div class="avatar-card glass-card">
+        <div class="avatar-header">
+          <div class="window-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="window-title code-font">ayan@developer:~</span>
+        </div>
+        <div class="avatar-body">
+          <div class="code-snippet code-font">
+            <p><span class="keyword">const</span> <span class="variable">developer</span> = &#123;</p>
+            <p class="indent"><span class="property">name</span>: <span class="string">'Ayan Kumar Pathak'</span>,</p>
+            <p class="indent"><span class="property">location</span>: <span class="string">'Purba Bardhaman, WB'</span>,</p>
+            <p class="indent"><span class="property">stack</span>: [<span class="string">'ASP.NET Core'</span>, <span class="string">'React'</span>, <span class="string">'Node.js'</span>],</p>
+            <p class="indent"><span class="property">currentRole</span>: <span class="string">'Full Stack Developer Intern'</span>,</p>
+            <p class="indent"><span class="property">passionateAbout</span>: <span class="string">'Clean Code & Scalable APIs'</span></p>
+            <p>&#125;;</p>
+            <p class="comment">// Always building something extraordinary</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Tech Badges -->
+      <div class="floating-badge badge-1 glass-card animate-float">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" width="20" height="20" class="badge-icon" />
+        <span class="badge-text font-semibold">React & Next.js</span>
+      </div>
+      <div class="floating-badge badge-2 glass-card animate-float" style="animation-delay: -1.5s;">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt="ASP.NET" width="20" height="20" class="badge-icon" />
+        <span class="badge-text font-semibold">ASP.NET Core</span>
+      </div>
+      <div class="floating-badge badge-3 glass-card animate-float" style="animation-delay: -3s;">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" width="20" height="20" class="badge-icon" />
+        <span class="badge-text font-semibold">SQL & MongoDB</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: calc(100vh - 5rem);
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--status-active);
+    box-shadow: 0 0 10px var(--status-active);
+    animation: pulse-glow 2s infinite;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .role-wrapper {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .role-prefix { color: var(--text-muted); }
+  .cursor { animation: blink 1s infinite; }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .text-primary { color: var(--text-primary); }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .cv-btn {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-num {
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 30px;
+    background: var(--border-color);
+  }
+
+  /* Hero Visual & Code Card */
+  .hero-visual {
+    position: relative;
+    padding: 2rem;
+  }
+
+  .avatar-card {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  }
+
+  .avatar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .window-dots {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .dot.red { background: #ef4444; }
+  .dot.yellow { background: #f59e0b; }
+  .dot.green { background: #10b981; }
+
+  .window-title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .avatar-body {
+    padding: 1.8rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .code-snippet {
+    color: var(--text-secondary);
+  }
+
+  .keyword { color: #d946ef; font-weight: 600; }
+  .variable { color: #38bdf8; }
+  .property { color: #f43f5e; }
+  .string { color: #4ade80; }
+  .comment { color: var(--text-muted); font-style: italic; margin-top: 0.8rem; }
+  .indent { padding-left: 1.5rem; }
+
+  /* Floating Badges */
+  .floating-badge {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .badge-1 {
+    top: 0;
+    right: 0;
+  }
+
+  .badge-2 {
+    bottom: -10px;
+    left: 0;
+  }
+
+  .badge-3 {
+    bottom: 30%;
+    right: -20px;
+  }
+
+  @media (max-width: 968px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 3rem;
+    }
+
+    .hero-desc {
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-stats {
+      justify-content: center;
+    }
+
+    .role-wrapper {
+      justify-content: center;
+    }
+
+    .floating-badge {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Simple Typewriter Effect for Roles
+  const roles = [
+    "Full Stack Developer",
+    "ASP.NET Core & React Developer",
+    "Enterprise Systems Engineer",
+    "MERN Stack Developer"
+  ];
+  
+  const typeEl = document.getElementById("typewriter");
+  let roleIdx = 0;
+  let charIdx = 0;
+  let isDeleting = false;
+
+  function type() {
+    if (!typeEl) return;
+    
+    const currentRole = roles[roleIdx];
+    
+    if (isDeleting) {
+      typeEl.textContent = currentRole.substring(0, charIdx - 1);
+      charIdx--;
+    } else {
+      typeEl.textContent = currentRole.substring(0, charIdx + 1);
+      charIdx++;
+    }
+
+    let typeSpeed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && charIdx === currentRole.length) {
+      typeSpeed = 2000; // Pause at end
+      isDeleting = true;
+    } else if (isDeleting && charIdx === 0) {
+      isDeleting = false;
+      roleIdx = (roleIdx + 1) % roles.length;
+      typeSpeed = 500; // Pause before typing new word
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+
+  // Start typewriter after load
+  setTimeout(type, 1000);
+
+  // CV button alert fallback if pdf not added yet
+  const cvBtn = document.getElementById('download-cv');
+  if (cvBtn) {
+    cvBtn.addEventListener('click', (e) => {
+      // You can replace this with actual CV file check
+      setTimeout(() => {
+        alert("CV requested! In production, this drops Ayan's actual CV PDF directly to the user.");
+      }, 100);
+    });
+  }
+</script>

@@ -1,0 +1,185 @@
+---
+const skills = [
+  // Frontend
+  { name: "React.js", category: "frontend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { name: "Next.js", category: "frontend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+  { name: "TypeScript", category: "frontend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+  { name: "JavaScript (ES6+)", category: "frontend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+  { name: "HTML5 & CSS3", category: "frontend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+  { name: "Redux", category: "frontend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" },
+  { name: "Astro", category: "frontend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" },
+
+  // Backend
+  { name: "ASP.NET Core", category: "backend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" },
+  { name: "C#", category: "backend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" },
+  { name: "Node.js & Express", category: "backend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+  { name: "Java", category: "backend", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+
+  // Database
+  { name: "Microsoft SQL Server", category: "database", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" },
+  { name: "MySQL", category: "database", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+  { name: "PostgreSQL", category: "database", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+  { name: "SQLite", category: "database", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" },
+  { name: "MongoDB", category: "database", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+
+  // Libraries & ORMs
+  { name: "Entity Framework Core", category: "libraries", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" },
+  { name: "Hot Chocolate GraphQL", category: "libraries", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" },
+  { name: "SignalR", category: "libraries", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" },
+  { name: "FluentValidation", category: "libraries", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" },
+  { name: "Serilog & Hangfire", category: "libraries", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg" },
+  { name: "Swagger & Scalar", category: "libraries", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" },
+  { name: "Bogus & NUnit", category: "libraries", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" },
+
+  // Tools
+  { name: "Git & Bitbucket", category: "tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+  { name: "Jira (Agile Workflows)", category: "tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" },
+  { name: "Figma (UI/UX)", category: "tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
+  { name: "Postman", category: "tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" }
+];
+---
+
+<section id="skills" class="skills section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Technical Arsenal</span>
+      <h2 class="section-title">My <span class="text-gradient">Tech Stack</span> & Proficiencies</h2>
+      <p class="section-subtitle">
+        Enterprise tools, frameworks, and databases I leverage to build robust, scalable architectures.
+      </p>
+    </div>
+
+    <!-- Interactive Filter Buttons -->
+    <div class="filter-controls">
+      <button class="filter-btn active" data-filter="all">All Skills</button>
+      <button class="filter-btn" data-filter="frontend">Frontend</button>
+      <button class="filter-btn" data-filter="backend">Backend</button>
+      <button class="filter-btn" data-filter="database">Databases</button>
+      <button class="filter-btn" data-filter="libraries">Libraries & ORM</button>
+      <button class="filter-btn" data-filter="tools">Tools & DevOps</button>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="skills-grid" id="skills-grid">
+      {skills.map(skill => (
+        <div class="skill-card glass-card" data-category={skill.category}>
+          <div class="skill-icon-wrapper">
+            <img src={skill.icon} alt={skill.name} class="skill-icon-img" width="45" height="45" loading="lazy" />
+          </div>
+          <h4 class="skill-name">{skill.name}</h4>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1.4rem;
+    border-radius: 9999px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--accent-gradient);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 5px 15px -5px var(--accent-glow);
+    transform: translateY(-2px);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    transition: all 0.4s ease;
+  }
+
+  .skill-card {
+    padding: 1.8rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .skill-card.hide {
+    display: none;
+  }
+
+  .skill-icon-wrapper {
+    width: 65px;
+    height: 65px;
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .skill-card:hover .skill-icon-wrapper {
+    border-color: var(--accent-primary);
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px -5px var(--accent-glow);
+  }
+
+  .skill-icon-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .skill-name {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  // Interactive Skill Filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const skillCards = document.querySelectorAll('.skill-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active from all
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      skillCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        if (filterValue === 'all' || cardCategory === filterValue) {
+          card.classList.remove('hide');
+          card.animate([
+            { opacity: 0, transform: 'scale(0.9)' },
+            { opacity: 1, transform: 'scale(1)' }
+          ], { duration: 300, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' });
+        } else {
+          card.classList.add('hide');
+        }
+      });
+    });
+  });
+</script>

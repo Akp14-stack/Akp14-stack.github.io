@@ -1,0 +1,260 @@
+---
+const currentYear = new Date().getFullYear();
+
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+---
+
+<footer class="footer">
+  <!-- Top glow separator line -->
+  <div class="footer-glow-line"></div>
+
+  <div class="footer-inner">
+    <!-- Logo -->
+    <a href="#home" class="footer-logo" aria-label="Back to top">
+      <span class="logo-first">Ayan</span><span class="logo-dot">.</span><span class="logo-last">Pathak</span>
+    </a>
+
+    <!-- Tagline -->
+    <p class="footer-tagline">
+      Full Stack Developer · Open to Opportunities
+    </p>
+
+    <!-- Divider -->
+    <div class="footer-sep"></div>
+
+    <!-- Navigation Row -->
+    <nav class="footer-nav" aria-label="Footer Navigation">
+      {navLinks.map(link => (
+        <a href={link.href} class="footer-nav-link">{link.label}</a>
+      ))}
+    </nav>
+
+    <!-- Social Icons Row -->
+    <div class="footer-socials">
+      <!-- GitHub -->
+      <a href="https://github.com/Akp14-stack" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-social-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+          <path d="M9 18c-4.51 2-5-2-7-2"/>
+        </svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/ayan-kumar-pathak" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-social-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect width="4" height="12" x="2" y="9"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:ayanpathak81@gmail.com" aria-label="Email" class="footer-social-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="16" x="2" y="4" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+      </a>
+
+      <!-- Phone -->
+      <a href="tel:+919883327593" aria-label="Phone" class="footer-social-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="footer-copyright">
+      <p>&copy; {currentYear} Ayan Kumar Pathak. All rights reserved.</p>
+      <span class="footer-sep-dot">·</span>
+      <p>Built with <span class="text-gradient font-semibold">Astro &amp; Vanilla CSS</span></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: relative;
+    width: 100%;
+    background: var(--bg-secondary);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* Top accent glow line */
+  .footer-glow-line {
+    width: 100%;
+    height: 2px;
+    background: var(--accent-gradient);
+    opacity: 0.7;
+  }
+
+  .footer-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+    text-align: center;
+  }
+
+  /* Logo */
+  .footer-logo {
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin: 0 auto 1rem;
+    display: block;
+    width: fit-content;
+    transition: opacity 0.2s ease;
+  }
+  .footer-logo:hover { opacity: 0.8; }
+
+  .logo-first { color: var(--text-primary); }
+  .logo-dot   { color: var(--text-accent); }
+  .logo-last  { color: var(--text-primary); }
+
+  /* Tagline */
+  .footer-tagline {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+  }
+
+  /* Divider */
+  .footer-sep {
+    width: 100%;
+    height: 1px;
+    background: var(--border-color);
+    margin-bottom: 2.5rem;
+  }
+
+  /* Navigation Row */
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-nav-link {
+    padding: 0.35rem 0.9rem;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-radius: 9999px;
+    transition: all 0.25s ease;
+  }
+
+  .footer-nav-link:hover {
+    color: var(--text-accent);
+    background: var(--bg-card);
+    border-color: var(--border-hover);
+  }
+
+  /* Social Icons */
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .footer-social-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-social-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent-gradient);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+  }
+
+  .footer-social-btn:hover::before {
+    opacity: 1;
+  }
+
+  .footer-social-btn svg {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+
+  .footer-social-btn:hover {
+    border-color: transparent;
+    color: #ffffff;
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 12px 25px -5px var(--accent-glow);
+  }
+
+  /* Copyright */
+  .footer-copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+  }
+
+  .footer-sep-dot {
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  @media (max-width: 500px) {
+    .footer-logo { font-size: 1.8rem; }
+
+    .footer-socials { gap: 0.75rem; }
+
+    .footer-copyright {
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .footer-sep-dot { display: none; }
+  }
+</style>

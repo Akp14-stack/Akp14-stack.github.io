@@ -1,0 +1,211 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<header class="header">
+  <nav class="nav container">
+    <a href="#home" class="logo">
+      <span class="logo-text">Ayan<span class="logo-dot">.</span></span>
+      <span class="logo-tag code-font">Pathak</span>
+    </a>
+
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-actions">
+      <ThemeToggle />
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--nav-bg);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-weight: 800;
+    font-size: 1.5rem;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .logo-text {
+    color: var(--text-primary);
+  }
+
+  .logo-dot {
+    color: var(--accent-primary);
+  }
+
+  .logo-tag {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.35rem;
+    background: rgba(79, 70, 229, 0.15);
+    color: var(--text-accent);
+    font-weight: 500;
+    border: 1px solid rgba(79, 70, 229, 0.3);
+  }
+
+  [data-theme="dark"] .logo-tag {
+    background: rgba(0, 240, 255, 0.15);
+    border-color: rgba(0, 240, 255, 0.3);
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--text-primary);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 2px;
+  }
+
+  .nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .mobile-toggle {
+    display: none;
+    color: var(--text-primary);
+    padding: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      position: fixed;
+      top: 5rem;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: calc(100vh - 5rem);
+      background: var(--bg-primary);
+      border-left: 1px solid var(--border-color);
+      padding: 3rem 2rem;
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.show {
+      right: 0;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 1.25rem;
+    }
+
+    .mobile-toggle {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  // Mobile Menu Toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+      });
+    });
+  }
+
+  // Scroll Spy for Nav Links
+  const sections = document.querySelectorAll('section[id]');
+  
+  function scrollActive() {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+      const sectionHeight = (current as HTMLElement).offsetHeight;
+      const sectionTop = (current as HTMLElement).offsetTop - 120;
+      const sectionId = current.getAttribute('id');
+      const navLink = document.querySelector(`.nav-list a[href*="#${sectionId}"]`);
+
+      if (navLink) {
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLink.classList.add('active');
+        } else {
+          navLink.classList.remove('active');
+        }
+      }
+    });
+  }
+
+  window.addEventListener('scroll', scrollActive);
+</script>

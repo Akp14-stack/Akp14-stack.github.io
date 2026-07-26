@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Ayan Kumar Pathak | Full Stack ASP.NET & React Developer",
+  description = "Portfolio of Ayan Kumar Pathak - Full Stack Developer specializing in ASP.NET Core, React.js, Node.js, Java, and scalable enterprise systems."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Ayan Kumar Pathak" />
+    <meta name="keywords" content="Ayan Kumar Pathak, Full Stack Developer, ASP.NET Core, React, Node.js, MERN Stack, Java, Portfolio, Software Engineer, West Bengal" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
+    <!-- FOUC (Flash of Unstyled Content) Prevention Script -->
+    <script is:inline>
+      (function() {
+        try {
+          const storedTheme = localStorage.getItem('theme');
+          if (storedTheme === 'light' || storedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', storedTheme);
+          } else {
+            const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', systemTheme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Background Glowing Ambient Orbs -->
+    <div class="ambient-glow" style="top: 5%; left: 10%;"></div>
+    <div class="ambient-glow" style="top: 50%; right: 5%; background: var(--accent-secondary);"></div>
+    <div class="ambient-glow" style="bottom: 5%; left: 30%; background: #06b6d4;"></div>
+
+    <Navbar />
+    
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

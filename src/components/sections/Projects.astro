@@ -1,0 +1,240 @@
+---
+const projects = [
+  {
+    title: "Full-Featured E-Commerce Website",
+    stack: "MERN Stack",
+    technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT Auth"],
+    summary: "A scalable, full-featured e-commerce platform encompassing dynamic product catalogs, advanced filtering, and centralized inventory management.",
+    features: [
+      "Engineered a responsive, intuitive frontend with React.js for seamless shopping cart functionality and real-time UI updates.",
+      "Implemented robust RESTful APIs with Node.js/Express and secure JWT authentication for customer and admin sessions.",
+      "Built comprehensive product catalog management with dynamic filtering, search, and inventory tracking features."
+    ],
+    githubUrl: "https://github.com/Akp14-stack/E-commerce",
+    liveUrl: "https://github.com/Akp14-stack/E-commerce",
+    badgeColor: "#10b981"
+  },
+  {
+    title: "Enterprise Restaurant Management System",
+    stack: "Advanced Java & MySQL",
+    technologies: ["Advanced Java", "MySQL", "Hibernate ORM", "Multi-tenant RBAC", "POS System", "PowerShell Automation"],
+    summary: "An enterprise-grade, multi-tenant web application for streamlined restaurant operations, centralizing real-time POS food ordering and dining table reservations.",
+    features: [
+      "Architected a dynamic Role-Based Access Control (RBAC) system to securely manage staff permissions across custom POS and kitchen workflows.",
+      "Leveraged Hibernate ORM for automated schema generation, transaction management, and high-performance data persistence with MySQL.",
+      "Integrated an interactive analytical dashboard and developed automated PowerShell scripts for 1-click enterprise server deployment."
+    ],
+    githubUrl: "https://github.com/Akp14-stack/Restaurant-Management-System",
+    liveUrl: "https://github.com/Akp14-stack/Restaurant-Management-System",
+    badgeColor: "#6366f1"
+  }
+];
+---
+
+<section id="projects" class="projects section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Portfolio Showcase</span>
+      <h2 class="section-title">Featured <span class="text-gradient">Architectures & Projects</span></h2>
+      <p class="section-subtitle">
+        Deep dive into my full-stack implementations spanning MERN and Enterprise Java ecosystems.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      {projects.map((project, idx) => (
+        <div class="project-card glass-card">
+          <div class="project-top">
+            <div class="project-meta">
+              <span class="project-num code-font">PROJECT // 0{idx + 1}</span>
+              <span class="stack-badge" style={`border-color: ${project.badgeColor};`}>{project.stack}</span>
+            </div>
+            
+            <div class="project-links">
+              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="action-btn" title="View Source Code on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              </a>
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="action-btn" title="View Live Demo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+
+          <h3 class="project-title">{project.title}</h3>
+          <p class="project-summary">{project.summary}</p>
+
+          <div class="tech-tags code-font">
+            {project.technologies.map(tech => (
+              <span class="tech-tag">{tech}</span>
+            ))}
+          </div>
+
+          <div class="project-features">
+            <h5 class="features-header">Key Architectural Highlights:</h5>
+            <ul class="features-list">
+              {project.features.map(feat => (
+                <li>
+                  <span class="bullet">&gt;</span>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .project-card {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .project-num {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .stack-badge {
+    padding: 0.25rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    border: 1px solid;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+  }
+
+  .action-btn:hover {
+    color: var(--text-accent);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+  }
+
+  .project-title {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .project-summary {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .tech-tag {
+    padding: 0.35rem 0.8rem;
+    border-radius: 0.35rem;
+    background: rgba(79, 70, 229, 0.1);
+    color: var(--text-accent);
+    font-size: 0.8rem;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+  }
+
+  [data-theme="dark"] .tech-tag {
+    background: rgba(0, 240, 255, 0.1);
+    border-color: rgba(0, 240, 255, 0.2);
+  }
+
+  .project-features {
+    margin-top: auto;
+  }
+
+  .features-header {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .bullet {
+    color: var(--text-accent);
+    font-weight: 700;
+    font-family: 'Fira Code', monospace;
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-card {
+      padding: 1.8rem;
+    }
+
+    .project-top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+</style>

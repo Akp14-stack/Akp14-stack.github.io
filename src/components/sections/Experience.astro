@@ -1,0 +1,251 @@
+---
+const experiences = [
+  {
+    role: "Full Stack Developer Intern",
+    company: "Koushiki Software",
+    location: "Kolkata, Dumdum (Onsite)",
+    period: "Sep 2025 – Present",
+    techStack: ["ASP.NET Core", "React.js", "SQLite", "SQL Server", "RESTful APIs", "Agile/Jira"],
+    summary: "Spearheaded the development of scalable enterprise web applications using ASP.NET Core and React.js, implementing robust RESTful APIs with secure authentication and optimized database queries.",
+    deliverables: [
+      {
+        title: "Resort & Restaurant Management System",
+        desc: "Developed end-to-end frontend and backend modules for dynamic property operations. Implemented role-based access control (RBAC), real-time booking management features, and seamless data synchronization using SQLite."
+      },
+      {
+        title: "Hardware Plus – Inventory Management System",
+        desc: "Architected robust Admin Panel functionalities for comprehensive inventory tracking. Built complex data grids, automated stock threshold alerts, and maintained core product management features using SQL Server."
+      },
+      {
+        title: "Hardware Plus Mobile Application Backend",
+        desc: "Engineered tailored backend REST API endpoints and data models optimized for mobile payload efficiency to effectively support the React Native application development team."
+      },
+      {
+        title: "Agile Engineering & DevOps",
+        desc: "Actively participated in Agile development workflows, engaging in daily stand-ups, code reviews, and utilizing Git, Bitbucket, and Jira for rigorous debugging, testing, and continuous application maintenance."
+      }
+    ]
+  }
+];
+---
+
+<section id="experience" class="experience section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Career Track</span>
+      <h2 class="section-title">Professional <span class="text-gradient">Work Experience</span></h2>
+      <p class="section-subtitle">
+        Real-world enterprise development engineering scalable ASP.NET Core & React solutions.
+      </p>
+    </div>
+
+    <div class="timeline">
+      {experiences.map((exp, idx) => (
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+
+          <div class="timeline-content glass-card">
+            <div class="exp-header">
+              <div>
+                <span class="exp-period code-font">{exp.period}</span>
+                <h3 class="exp-role">{exp.role}</h3>
+                <h4 class="exp-company">{exp.company} <span class="exp-loc">({exp.location})</span></h4>
+              </div>
+              <div class="tech-pills">
+                {exp.techStack.map(tech => (
+                  <span class="tech-pill code-font">{tech}</span>
+                ))}
+              </div>
+            </div>
+
+            <p class="exp-summary">{exp.summary}</p>
+
+            <div class="deliverables-grid">
+              {exp.deliverables.map((item, dIdx) => (
+                <div class="deliverable-card">
+                  <div class="del-header">
+                    <span class="del-num code-font">0{dIdx + 1}</span>
+                    <h5 class="del-title">{item.title}</h5>
+                  </div>
+                  <p class="del-desc">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 1.5rem;
+  }
+
+  .timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .marker-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    box-shadow: 0 0 15px var(--accent-glow);
+    z-index: 2;
+  }
+
+  .marker-line {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-primary) 0%, transparent 100%);
+    margin-top: -5px;
+  }
+
+  .timeline-content {
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .exp-period {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--status-active);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    background: var(--status-glow);
+    padding: 0.2rem 0.75rem;
+    border-radius: 9999px;
+  }
+
+  .exp-role {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .exp-company {
+    font-size: 1.2rem;
+    color: var(--text-accent);
+    font-weight: 600;
+  }
+
+  .exp-loc {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 0.95rem;
+  }
+
+  .tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    max-width: 350px;
+    justify-content: flex-end;
+  }
+
+  .tech-pill {
+    padding: 0.3rem 0.75rem;
+    border-radius: 0.35rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  .exp-summary {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .deliverable-card {
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    transition: all 0.25s ease;
+  }
+
+  .deliverable-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .del-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .del-num {
+    font-size: 0.85rem;
+    color: var(--text-accent);
+    font-weight: 700;
+    opacity: 0.7;
+  }
+
+  .del-title {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+  }
+
+  .del-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .timeline-item {
+      grid-template-columns: 1fr;
+    }
+
+    .timeline-marker {
+      display: none;
+    }
+
+    .tech-pills {
+      justify-content: flex-start;
+      max-width: 100%;
+    }
+
+    .deliverables-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
